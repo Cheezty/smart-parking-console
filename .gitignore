@@ -1,0 +1,11 @@
+node_modules
+dist
+*.tsbuildinfo
+.env.local
+.env.*.local
+.env
+.env.*
+!.env.example
+.playwright-cli
+/output/
+/车牌照片（京Q01US9）.jpg

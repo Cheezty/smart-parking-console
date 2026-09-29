@@ -1,0 +1,37 @@
+{
+  "name": "smart-parking-console",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/check-dev-ports.mjs && concurrently -k -n API,WEB -c cyan,blue \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node --watch --watch-path=server --watch-path=.env server/index.mjs",
+    "dev:web": "vite --host 127.0.0.1",
+    "start:api": "node server/index.mjs",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "dotenv": "^18.0.4",
+    "element-plus": "^2.11.0",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "pinia": "^3.0.3",
+    "tencentcloud-sdk-nodejs-ocr": "^4.1.320",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^22.15.30",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "concurrently": "^10.0.5",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.2",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.1.0"
+  }
+}
